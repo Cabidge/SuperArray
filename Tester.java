@@ -11,5 +11,7 @@ public class Tester {
         System.out.println(list.size() == 2);
         System.out.println(list.get(0).equals("Cowabunga"));
         System.out.println(list.get(1).equals("Kerblam"));
+        System.out.println(list.set(0,"Cowabungus").equals("Cowabunga"));
+        System.out.println(list.get(0).equals("Cowabungus"));
     }
 }
