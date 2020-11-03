@@ -4,7 +4,8 @@ public class Tester {
 
         System.out.println("Should all be true:");
         
-        System.out.println("size method:");
         System.out.println(list.size() == 0);
+        System.out.println(list.add("Cowabunga"));
+        System.out.println(list.size() == 1);
     }
 }
