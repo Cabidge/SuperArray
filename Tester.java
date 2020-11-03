@@ -13,5 +13,12 @@ public class Tester {
         System.out.println(list.get(1).equals("Kerblam"));
         System.out.println(list.set(0,"Cowabungus").equals("Cowabunga"));
         System.out.println(list.get(0).equals("Cowabungus"));
+
+        for (int i = 0; i < 20; i++) {
+            list.add("");
+        }
+
+        System.out.println(list.size() == 22);
+        System.out.println(list.get(21).equals(""));
     }
 }
