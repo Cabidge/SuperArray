@@ -7,5 +7,9 @@ public class Tester {
         System.out.println(list.size() == 0);
         System.out.println(list.add("Cowabunga"));
         System.out.println(list.size() == 1);
+        list.add("Kerblam");
+        System.out.println(list.size() == 2);
+        System.out.println(list.get(0).equals("Cowabunga"));
+        System.out.println(list.get(1).equals("Kerblam"));
     }
 }
