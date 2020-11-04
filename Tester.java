@@ -30,5 +30,14 @@ public class Tester {
         list.clear();
 
         System.out.println(list.isEmpty());
+
+        System.out.println("\ntoString:");
+        System.out.println(list);
+        System.out.println(list2);
+
+        list.add("ABC");
+        list.add("123");
+
+        System.out.println(list);
     }
 }
