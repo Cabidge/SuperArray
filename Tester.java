@@ -54,8 +54,12 @@ public class Tester {
         
         // removes everything but the first and last item
         while (list.size() > 2) {
-            System.out.println(list.remove(1));
+            System.out.println("removed: " + list.remove(1));
         }
         System.out.println(list);
+
+        System.out.println("Expected 0: " + list.indexOf("ABC"));
+        System.out.println("Expected 1: " + list.indexOf("ahahahahahahahhahhhhhh"));
+        System.out.println("Expected -1: " + list.indexOf("23"));
     }
 }
