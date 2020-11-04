@@ -47,5 +47,7 @@ public class Tester {
 
         System.out.println("list contains \"123\": " + list.contains("123"));
         System.out.println("list contains \"321\": " + list.contains("321"));
+
+        SuperArray list3 = new SuperArray(100);
     }
 }
