@@ -23,8 +23,12 @@ public class Tester {
         
         // 11/4
         SuperArray list2 = new SuperArray();
-        
+
         System.out.println(!list.isEmpty());
         System.out.println(list2.isEmpty());
+
+        list.clear();
+
+        System.out.println(list.isEmpty());
     }
 }
