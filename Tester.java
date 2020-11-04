@@ -47,5 +47,15 @@ public class Tester {
 
         System.out.println("list contains \"123\": " + list.contains("123"));
         System.out.println("list contains \"321\": " + list.contains("321"));
+
+        System.out.println("remove index 2:");
+        System.out.println(list.remove(2));
+        System.out.println(list);
+        
+        // removes everything but the first and last item
+        while (list.size() > 2) {
+            System.out.println(list.remove(1));
+        }
+        System.out.println(list);
     }
 }
