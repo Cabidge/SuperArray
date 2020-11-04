@@ -20,5 +20,11 @@ public class Tester {
 
         System.out.println(list.size() == 22);
         System.out.println(list.get(21).equals(""));
+        
+        // 11/4
+        SuperArray list2 = new SuperArray();
+        
+        System.out.println(!list.isEmpty());
+        System.out.println(list2.isEmpty());
     }
 }
