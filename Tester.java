@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tester {
     public static void main(String[] abcdefghijklmnopqrstuvwxyz) {
         SuperArray list = new SuperArray();
@@ -52,14 +54,20 @@ public class Tester {
         System.out.println(list.remove(2));
         System.out.println(list);
         
-        // removes everything but the first and last item
-        while (list.size() > 2) {
-            System.out.println("removed: " + list.remove(1));
-        }
-        System.out.println(list);
+        // // removes everything but the first and last item
+        // while (list.size() > 2) {
+        //     System.out.println("removed: " + list.remove(1));
+        // }
+        // System.out.println(list);
 
         System.out.println("Expected 0: " + list.indexOf("ABC"));
-        System.out.println("Expected 1: " + list.indexOf("ahahahahahahahhahhhhhh"));
+        System.out.println("Expected 14: " + list.indexOf("ahahahahahahahhahhhhhh"));
         System.out.println("Expected -1: " + list.indexOf("23"));
+
+        System.out.println("\ntoArray (should be the same):");
+        System.out.println(list.toString());
+        System.out.println(Arrays.toString(list.toArray()));
+        System.out.println(list2.toString());
+        System.out.println(Arrays.toString(list2.toArray()));
     }
 }
