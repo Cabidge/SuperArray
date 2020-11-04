@@ -37,7 +37,15 @@ public class Tester {
 
         list.add("ABC");
         list.add("123");
+        list.add("");
+        list.add("ahahahahahahahhahhhhhh");
+        for (int i = 0; i < 12; i++) {
+            list.add(Integer.toString(i));
+        }
 
         System.out.println(list);
+
+        System.out.println("list contains \"123\": " + list.contains("123"));
+        System.out.println("list contains \"321\": " + list.contains("321"));
     }
 }
