@@ -2,31 +2,29 @@ public class Demo {
     public static void main(String[] ah) {
         SuperArray words = new SuperArray();
         //grouped to save vertical space
-        words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");     
+        words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");
         words.add("una");    words.add("ebi");     words.add("kani");    words.add("una");
-        words.add("una");    words.add("ebi");     words.add("toro"); 
+        words.add("una");    words.add("ebi");     words.add("toro");
 
         System.out.println(words);
-        removeDuplicates(words);
-        System.out.println(words);
+        //removeDuplicates(words);
+        SuperArray WORDSB = new SuperArray();
+        //grouped to save vertical space
+        WORDSB.add("kani");   WORDSB.add("uni");     WORDSB.add("ebi");
+        WORDSB.add("daba shouldn't be here");
 
-        SuperArray a = new SuperArray(6);
-        a.add("9");
-        a.add("1");
-        a.add("2");
-        a.add("2");
-        a.add("3");
-        a.add("4");
 
-        SuperArray b = new SuperArray(5);
-        b.add("0");
-        b.add("4");
-        b.add("2");
-        b.add("2");
-        b.add("9");
+        SuperArray wordsA = new SuperArray();
+        //grouped to save vertical space
+        wordsA.add("kani");   wordsA.add("uni");     wordsA.add("ebi");     wordsA.add("una");
+        wordsA.add("una");    wordsA.add("ebi");     wordsA.add("kani");    wordsA.add("una");
+        wordsA.add("una");    wordsA.add("ebi");     wordsA.add("toro");
 
-        SuperArray c = findOverlap(a, b);
-        System.out.println(c);
+        System.out.println(findOverlap(WORDSB, words));
+        System.out.println("Should be true");
+        System.out.println(words.equals(wordsA));
+        System.out.println("Should be false");
+        System.out.println(words.equals(WORDSB));
     }
 
     public static void removeDuplicates(SuperArray s) {
