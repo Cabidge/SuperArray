@@ -25,6 +25,20 @@ public class Demo {
         System.out.println(words.equals(wordsA));
         System.out.println("Should be false");
         System.out.println(words.equals(WORDSB));
+
+        String[] aStr = {"a","b","c","d","e","f"};
+        String[] bStr = {"0","1","2","3"};
+        String[] cStr = {"a","b","c"};
+        String[] dStr = {"0","1","2","3","4"};
+        SuperArray a = toSuper(aStr);
+        SuperArray b = toSuper(bStr);
+        SuperArray c = toSuper(cStr);
+        SuperArray d = toSuper(dStr);
+
+        System.out.println("[a, 0, b, 1, c, 2, d, 3, e, f] expected:");
+        System.out.println(zip(a, b));
+        System.out.println("[a, 0, b, 1, c, 2, 3, 4] expected:");
+        System.out.println(zip(c, d));
     }
 
     public static void removeDuplicates(SuperArray s) {
@@ -45,6 +59,41 @@ public class Demo {
             }
         }
 
+        return out;
+    }
+
+    public static SuperArray zip(SuperArray a, SuperArray b) {
+        SuperArray out = new SuperArray(a.size() + b.size());
+
+        SuperArray biggest; // For filling in the last elements
+        int minimumSize; // To determine how long to alternate between the two "lists"
+        if (a.size() > b.size()) {
+            minimumSize = b.size();
+            biggest = a;
+        } else {
+            minimumSize = a.size();
+            biggest = b;
+        }
+
+        // Alternating
+        for (int i = 0; i < minimumSize; i++) {
+            out.add(a.get(i));
+            out.add(b.get(i));
+        }
+
+        // Fill
+        for (int i = minimumSize; i < biggest.size(); i++) {
+            out.add(biggest.get(i));
+        }
+
+        return out;
+    }
+
+    public static SuperArray toSuper(String[] arr) {
+        SuperArray out = new SuperArray(arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            out.add(arr[i]);
+        }
         return out;
     }
 }
