@@ -112,5 +112,33 @@ public class Tester {
         } catch (IndexOutOfBoundsException err) {
             System.out.println("set() error caught");
         }
+
+        // add
+        // non errors
+        try {
+            list.add(0,"first!");
+            System.out.println("add() in range");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("This shouldn't print");
+        }
+        try {
+            list.add(list.size(),"last!");
+            System.out.println("add() in range");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("This shouldn't print");
+        }
+        // IOOB
+        try {
+            list.add(-1,"first!");
+            System.out.println("This shouldn't print");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("add() error caught");
+        }
+        try {
+            list.add(list.size()+1,"last!");
+            System.out.println("This shouldn't print");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("add() error caught");
+        }
     }
 }

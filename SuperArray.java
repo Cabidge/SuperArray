@@ -31,6 +31,10 @@ public class SuperArray {
     }
 
     public void add(int index, String element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("index of " + index + " is out of bounds, index must be between 0 and size inclusive");
+        }
+
         if (size == data.length) {
             resize();
         }
