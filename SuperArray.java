@@ -46,6 +46,9 @@ public class SuperArray {
     }
 
     public String remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("index of " + index + " is out of bounds, index must be between 0 and size-1 inclusive");
+        }
         String out = data[index];
 
         for (int i = index + 1; i < size; i++) {
