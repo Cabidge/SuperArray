@@ -16,6 +16,20 @@ public class Tester {
         }
 
         // get()
+        // non errors
+        try {
+            list.get(0);
+            System.out.println("get() in range");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("This shouldn't print");
+        }
+        try {
+            list.get(19);
+            System.out.println("get() in range");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("This shouldn't print");
+        }
+
         // negatives
         try {
             list.get(-1);
@@ -54,6 +68,49 @@ public class Tester {
             System.out.println("This shouldn't print");
         } catch (IndexOutOfBoundsException err) {
             System.out.println("get() error caught");
+        }
+
+        // set
+        // non errors
+        try {
+            list.set(0,"woah");
+            System.out.println("set() in range");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("This shouldn't print");
+        }
+        try {
+            list.set(19,"woah");
+            System.out.println("set() in range");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("This shouldn't print");
+        }
+
+        // negatives
+        try {
+            list.set(-1,"oops");
+            System.out.println("This shouldn't print");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("set() error caught");
+        }
+        try {
+            list.set(-5,"oops");
+            System.out.println("This shouldn't print");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("set() error caught");
+        }
+
+        // >= size
+        try {
+            list.set(20,"nope");
+            System.out.println("This shouldn't print");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("set() error caught");
+        }
+        try {
+            list.set(22,"nope");
+            System.out.println("This shouldn't print");
+        } catch (IndexOutOfBoundsException err) {
+            System.out.println("set() error caught");
         }
     }
 }
